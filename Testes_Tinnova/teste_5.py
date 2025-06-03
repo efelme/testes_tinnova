@@ -28,7 +28,7 @@ def listar_veiculos():
     return jsonify(resultado), 200
 
 @app.route('/veiculos/<int:veiculo_id>', methods=['GET'])
-def get_veiculo(veiculo_id):
+def listar_veiculo_por_id(veiculo_id):
     veiculo = buscar_por_id(veiculo_id)
     if veiculo:
         return jsonify(veiculo)
@@ -74,7 +74,7 @@ def atualizar_veiculo(veiculo_id):
     return jsonify(veiculo), 200
 
 @app.route('/veiculos/<int:veiculo_id>', methods=['PATCH'])
-def patch_veiculo(veiculo_id):
+def atualizar_dados_veiculo(veiculo_id):
     dados = request.get_json()
     veiculo = buscar_por_id(veiculo_id)
     
